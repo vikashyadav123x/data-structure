@@ -97,3 +97,38 @@ public class array{
 
     }
 }*/
+
+
+//practice
+import java.util.*;
+public class array{
+    public static void main(String[] args ){
+        Scanner sc = new Scanner(System.in);
+        String s= sc.nextLine();
+        int length=s.length();
+        int hash[] = new int[256];
+        for(int i=0;i<length;i++){
+            hash[s.charAt(i)]++;
+        }
+        // int start=0;
+        // int end=length-1;
+        // boolean isPalindrome=true;
+        // while(start<end){
+        //     if(s.charAt(start)!=s.charAt(end)){
+        //         isPalindrome=false;
+        //         break;
+        //     }
+        //     start++;
+        //     end--;
+        // }
+        //System.out.println(isPalindrome);
+        boolean isSameFreq=true;
+        for(int i=0;i<length;i++){
+            if(hash[s.charAt(0)]!=hash[s.charAt(i)]){
+                isSameFreq=false;
+                break;
+            }
+        }
+        System.out.println(isSameFreq);
+    }
+}
