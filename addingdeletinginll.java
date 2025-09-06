@@ -63,13 +63,81 @@ private static Node insertHead(Node head,int val){
   return new Node(val,head);
 }
 
+private static Node insertPosition(Node head,int el,int k){
+  if(head==null){
+    if(k==1){
+      return new Node(el);
+    }else{
+      return head;
+    }
+  }
+  if(k==1){
+    return new Node(el,head);
+  }
+
+
+  Node temp=head;
+  int cnt=0;
+  while(temp!=null){
+    cnt++;
+    if(cnt==(k-1)){
+      Node x = new Node(el,temp.next);
+      temp.next = x;
+      break;
+    }
+    temp=temp.next;
+  }
+  return head;
+}
+
   
+  // public static void main(String[] args){
+  //   int[] arr = {12,5,8,7};
+  //   Node head = convert2LL(arr);
+  //   // head = deleteHead(head);
+  //   // head = deleteTail(head);
+  //   // head = insertHead(head, 1000);
+  //   head = insertPosition(head, 1000,2);
+  //   print(head);
+  // }
+
+
+  private static Node reverse(Node head){
+    Node temp = head;
+    Node prev=null;
+    
+    while(temp!=null){
+      Node front = temp.next;
+      temp.next = prev;
+      prev = temp;
+      temp=front;
+    }
+    return prev;
+
+  }
+  private static boolean isPalindrome(Node head){
+    Node slow =head;
+    Node fast = head;
+    if(head==null || head.next==null)return true;
+    while(fast!=null && fast.next!=null){
+      slow=slow.next;
+      fast = fast.next.next;
+    }
+    Node newHead = reverse(slow.next);
+
+    Node first = head;
+    Node second  = newHead;
+    while(second!=null){
+      if(first.data!=second.data)return false;
+      first=first.next;
+      second=second.next;
+    }
+    return true;
+  }
+
   public static void main(String[] args){
-    int[] arr = {12,5,8,7};
+    int[] arr = {12,77,5,8,5,77,12};
     Node head = convert2LL(arr);
-    // head = deleteHead(head);
-    // head = deleteTail(head);
-    head = insertHead(head, 1000);
-    print(head);
+    System.out.println(isPalindrome(head));
   }
 }
