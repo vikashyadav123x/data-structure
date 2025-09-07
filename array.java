@@ -102,6 +102,7 @@ public class array{
 //practice
 import java.util.*;
 public class array{
+
     public static void main(String[] args ){
         Scanner sc = new Scanner(System.in);
         String s= sc.nextLine();
@@ -110,6 +111,7 @@ public class array{
         for(int i=0;i<length;i++){
             hash[s.charAt(i)]++;
         }
+        int a=0;
         // int start=0;
         // int end=length-1;
         // boolean isPalindrome=true;
