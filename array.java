@@ -123,7 +123,6 @@ public class array{
         // }
         //System.out.println(isPalindrome);
         boolean isSameFreq=true;
-        int a=0;
         for(int i=0;i<length;i++){
             if(hash[s.charAt(0)]!=hash[s.charAt(i)]){
                 isSameFreq=false;
