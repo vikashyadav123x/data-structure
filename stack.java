@@ -16,7 +16,7 @@ public class stack {
     st.pop();
     // System.out.println(st.size());
     // System.out.println(st.peek());
-    System.out.println("good boy ok");
+    System.out.println("good boy ok bby");
     System.out.println(st);
   }
 }
